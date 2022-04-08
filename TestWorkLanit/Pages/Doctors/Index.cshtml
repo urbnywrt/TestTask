@@ -1,0 +1,19 @@
+﻿@page
+@model TestWorkLanit.Pages.Doctors.IndexModel
+@{
+    ViewData["Title"] = "Список врачей";
+}
+<h2>@ViewData["Title"]</h2>
+ 
+<p><a asp-page="Create">Добавить врача</a></p>
+<table class="table">
+    <thead>
+        <tr><th>Специализация</th><th>Имя</th><th>Работает с </th><th>Работает до</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var doc in Model.Doctor)
+        {
+            <tr><td>@doc.Spec</td><td>@doc.Name</td><td>@doc.TimeFrom</td><td>@doc.TimeTo</td></tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Врачи";
+}
+
+<div class="text-center">
+<table class="table">
+    <thead>
+        <tr><th>Имя</th><th>Специализация</th><th>Работает с </th><th>Работает до</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var doc in Model.Doctor)
+        {
+            <tr>
+                <td><a asp-page="DocSchedule"  asp-route-name="@doc.Name">@doc.Name</a></td>
+                <td>@doc.Spec</td>
+                <td>@doc.TimeFrom</td>
+                <td>@doc.TimeTo</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

@@ -1,0 +1,28 @@
+﻿@page
+@model TestWorkLanit.Pages.DocSheduleModel
+@{
+    ViewData["Title"] = "Расписание врача " + @Model.CurrentDoctor.Name;
+}
+<h2>@ViewData["Title"]</h2>
+
+<p><a asp-page="DocApp">Записаться к врачу</a></p>
+<table class="table">
+    <thead>
+        <tr><th>Пациент</th><th>Дата/Время</th></th></tr>
+    </thead>
+    <tbody>
+        @if (Model.Patient != null)
+        {
+            @foreach (var patient in Model.Patient)
+            {
+                if (patient.docName == Model.CurrentDoctor.Name){
+            <tr>
+            <td>@patient.Name</td>
+            <td>@patient.AppointmentTime</td>
+            </tr>
+                }
+            }
+
+        }
+    </tbody>
+</table>

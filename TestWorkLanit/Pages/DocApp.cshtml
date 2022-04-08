@@ -1,0 +1,15 @@
+﻿@page
+@model TestWorkLanit.Pages.DocAppModel
+@{
+    ViewData["Title"] = "Запись к врачу";
+}
+<h2>@ViewData["Title"]</h2>
+<div asp-validation-summary="All"></div>
+<form method="POST">
+    <div><label>Имя врача</label><br /><input asp-for="Patient.docName"  /></div>
+    <div><label>Имя пациента</label><br /><input asp-for="Patient.Name"  /></div>
+    <div><label>Время записи</label><br /><input asp-for="Patient.AppointmentTime"  /></div>
+    <input type="submit" value="Отправить" />
+</form>
+
+
